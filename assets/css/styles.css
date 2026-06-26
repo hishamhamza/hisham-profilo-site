@@ -239,10 +239,13 @@ html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 /* ===================== RESEARCH ===================== */
 .pub-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .pub-card {
+  display: block; text-decoration: none; color: inherit;
   background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 30px; transition: transform .25s ease, border-color .25s ease;
+  padding: 30px; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
-.pub-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.pub-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+.pub-arrow { display: inline-block; transition: transform .25s ease; }
+.pub-card:hover .pub-arrow { transform: translate(2px, -2px); }
 .pub-tag {
   display: inline-block; background: var(--accent-soft); color: var(--accent);
   font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; margin-block-end: 14px;
