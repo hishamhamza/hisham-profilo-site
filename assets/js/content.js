@@ -118,7 +118,9 @@
     if (typeof window.HHObserveReveals === "function") window.HHObserveReveals();
   }
 
-  fetch(DATA_URL)
+  // no-store so admin edits show up immediately (content.json must not be
+  // served from the long-lived immutable cache used for other assets)
+  fetch(DATA_URL, { cache: "no-store" })
     .then((res) => {
       if (!res.ok) throw new Error("Could not load content.json");
       return res.json();

@@ -82,28 +82,23 @@
   </style>
 </head>
 <body>
-  <!-- ============== TOKEN / LOGIN GATE ============== -->
+  <!-- ============== LOGIN GATE ============== -->
   <div id="gate" class="gate">
     <div class="panel">
-      <h2>Content Manager</h2>
-      <p>To publish changes, sign in with a GitHub <b>personal access token</b> that has write access to the site repository. Changes are committed to GitHub and the site redeploys automatically.</p>
-      <label for="tok">GitHub token</label>
-      <input id="tok" type="password" placeholder="github_pat_… or ghp_…" autocomplete="off" />
-
-      <details class="settings">
-        <summary>Repository settings (advanced)</summary>
-        <div class="field"><label for="owner">Owner</label><input id="owner" /></div>
-        <div class="field"><label for="repo">Repository</label><input id="repo" /></div>
-        <div class="field"><label for="branch">Branch</label><input id="branch" /></div>
-      </details>
+      <h2>Sign in</h2>
+      <p>Enter your username and password to manage the site content.</p>
+      <label for="user">Username</label>
+      <input id="user" type="text" autocomplete="username" />
+      <label for="pass">Password</label>
+      <input id="pass" type="password" autocomplete="current-password" />
 
       <div style="margin-top:20px; display:flex; gap:10px; align-items:center;">
         <button id="loginBtn" class="btn primary">Sign in</button>
         <span id="gateStatus" class="status"></span>
       </div>
-      <p class="muted" style="margin-top:18px; font-size:12px;">
-        The token is stored only in this browser (localStorage). Use a fine-grained token limited to this repo with <b>Contents: Read and write</b>.
-      </p>
+      <label style="margin-top:16px; display:flex; align-items:center; gap:8px; font-weight:500; color:var(--muted);">
+        <input id="remember" type="checkbox" style="width:auto;" /> Stay signed in on this device
+      </label>
     </div>
   </div>
 
